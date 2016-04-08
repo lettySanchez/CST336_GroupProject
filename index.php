@@ -141,21 +141,24 @@ function getMovieGenres()
 
          $row = 0;
          $records =  getMovies();
-         if(!empty($records)){
-         foreach ($records as $record) 
+         if(!empty($records))
          {
-             echo "<tr>";
-             echo "<td>" . $record['movieTitle'] . "<br>" . $record['price']. "<br>
-                  <button type='button'>Add to Cart</button></td>";
-             echo "</tr>";
-         }
-         print_r($records);
+             foreach ($records as $record) 
+             {
+                 echo "<tr>";
+                 echo "<td>" . $record['movieTitle'] . "<br>" . $record['price']. "<br>
+                      <input type='checkbox' name='moviesToBuy[]'>Add to Cart</button></td>";
+                 echo "</tr>";
+             }
          }
          ?>
-         
 
          </table>
         </div>
+        
+        <form>
+            <input type="submit" value="Proceed to Checkout" name="proceedToCheckout"/>
+        </form>
      
     </body>
 </html>
