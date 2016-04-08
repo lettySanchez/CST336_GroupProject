@@ -1,71 +1,112 @@
 <?php
-/*
-include('/team_project/CST336_GroupProject/includes/database.php');
-$dbConnection = getDatabaseConnection('catalogue');
+//session_start();
 
-function getProductTypes()
+include('includes/database.php');
+$dbConnection = getDatabaseConnection('online_movie_catalogue');
+
+function getMovies()
 {
-     global $dbConnection;
-    
+    global $dbConnection;
+
+            
+    if(isset($_GET['searchForm']))
+    {
+
     $sql = "SELECT *
-            FROM productType";
+            FROM movies";
+    
+    if(isset($_GET['movieQuery']))
+    {
+        $query = $_GET['movieQuery'];
+        $sql .= " WHERE movieTitle 
+                 LIKE '%$query%'";
+    }
+    
+    if(!empty($_GET['genre']))
+    {
+        $genreId = $_GET['genre'];
+        $sql .= " AND genreId = $genreId";
+    }
+    
+    echo $sql;
     $statement = $dbConnection->prepare($sql);
     $statement->execute();
     $records = $statement->fetchAll(PDO::FETCH_ASSOC);
-    
-    //print_r($records);
-    
     return $records;
+    
+    }
+
 }
 
-function getItems()
+function getMovieGenres()
 {
-    //array
     global $dbConnection;
     
     $sql = "SELECT *
-            FROM products";
+            FROM genres";
     $statement = $dbConnection->prepare($sql);
     $statement->execute();
     $records = $statement->fetchAll(PDO::FETCH_ASSOC);
     
-    //print_r($records);
+    print_r($records);
     
     return $records;
-
 }
-*/
+
+
+
 
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Online Catalogue</title>
+        <title>Online Movie Catalogue</title>
     </head>
     <body>
-        <h1>Welcome to Online Catalogue!</h1>
+        <h1>Welcome to Online Movie Catalogue!</h1>
+        
         
         <form>
 
-            <select name="category">
-                <option value="All">All</option>
-                <?php/*
-                    $productTypeList = getProductTypes();
-                    foreach($productTypeList as $productType)
+            <select name="genre">
+                <option value="">All Genres</option>
+                <?php
+                    $movieGenreList = getMovieGenres();
+                    foreach($movieGenreList as $movieGenre)
                     {
-                        echo "<option value='$productType'>$productType</option>";
-                    }*/
+                        echo "<option value='" . $movieGenre['genreId'] . "'>" . $movieGenre['genreName'] . "</option>";
+                    }
                     
                 ?>
             </select>
-            <input type="text" name="searchItem" placeholder="Search for an item" size=100/>
-            <a target="productsFrame" href="getProducts.php"><input type="submit" value="submit" name="search"/></a>
+            
+            <input type="text" name="movieQuery" placeholder="Search for a movie" size=100/>
+            
+            <input type="submit" value="submit" name="searchForm"/>
             
         </form>
         
-        
         <div>
-            <iframe name= "productsFrame" width="900" height="900" src="getProducts.php" frameborder="1"></iframe>
+         
+        <table border=1>
+            
+        <?php
+
+         $row = 0;
+         $records =  getMovies();
+         if(!empty($records)){
+         foreach ($records as $record) 
+         {
+             echo "<tr>";
+             echo "<td>" . $record['movieTitle'] . "<br>" . $record['price']. "</td>";
+             echo "</tr>";
+         }
+         print_r($records);
+         }
+         ?>
+         
+
+         </table>
         </div>
      
     </body>
