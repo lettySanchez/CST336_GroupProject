@@ -1,9 +1,14 @@
 h1{
     color: #ffffff;
+    text-align: center;
 }
 h3{
     font-size: 150% ;
     color: #000099;
+    text-align: center;
+}
+#searchF{
+    font-size: 12pt;
 }
 
 body{
@@ -16,8 +21,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3db99e', end
 
    margin-left: 10%;
    margin-right:40%;
-    margin: 0 auto;
+    text-align: left;
     font-family:Verdana, Arial, Georgia;
+    
   
 
 }
@@ -44,4 +50,16 @@ iframe{
      font-weight: bold !important;
     color: #660033 !important;
    
+}
+#dropBox{
+     width:100px;
+}
+#rating{
+    text-align: left;
+}
+#addToCart{
+    text-align: center;
+}
+img{
+    text-align: center;
 }
