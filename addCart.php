@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-
+$_SESSION['errors'] = array();
 
 
 include('includes/database.php');
@@ -55,6 +55,18 @@ $dbConnection = getDatabaseConnection('online_movie_catalogue');
    
     
   }
+  function isDataValid(){
+    $dataValid = true;
+    if(empty(getMovieGenres())){
+        array_push($_SESSION['errors'], "Error. You must select a movie genre");
+        $dataValid = false;
+    }
+    return $dataValid;
+    
+}
+if (!isDataValid()){
+        header('Location: index.php');
+    };
 //print_r($itemsList);
   //header('Location: index.php');
 ?>
