@@ -1,5 +1,8 @@
 <?php
-//session_start();
+
+session_start();
+$_SESSION['items'] = array();
+$_SESSION['errors'] = array();
 
 include('includes/database.php');
 $dbConnection = getDatabaseConnection('online_movie_catalogue');
@@ -14,6 +17,7 @@ function getMovies()
 
     $sql = "SELECT *
             FROM movies";
+    
     
     if(isset($_GET['movieQuery']))
     {
@@ -56,7 +60,8 @@ function getMovies()
     return $records; 
     
     }
-    
+
+
 }
 
 function getMovieGenres()
@@ -73,17 +78,21 @@ function getMovieGenres()
 }
 
 
+    
+
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <title>Online Movie Catalogue</title>
+        
+        <link rel="stylesheet" type="text/css" href="css/movieDatabase.css" />
     </head>
     <body>
         <h1>Welcome to Online Movie Catalogue!</h1>
         
         
-        <form>
+        <form >
 
             <select name="genre">
                 <option value="">All Genres</option>
@@ -131,11 +140,12 @@ function getMovieGenres()
                 <option value ="high">Price: High to Low</option>
             </select>
 
+    <div>
         </form>
-        
+         <form action = "addCart.php">
         <div>
          
-        <table border=1>
+        <table border=1  style="float:left" >
             
         <?php
 
@@ -143,22 +153,42 @@ function getMovieGenres()
          $records =  getMovies();
          if(!empty($records))
          {
+             $id = 1;
              foreach ($records as $record) 
              {
-                 echo "<tr>";
-                 echo "<td>" . $record['movieTitle'] . "<br>" . $record['price']. "<br>
-                      <input type='checkbox' name='moviesToBuy[]'>Add to Cart</button></td>";
+                 $movie = $record['movieTitle'];
+                // echo "<tr>";
+                 if($id == 1 || $id == 3 || $id == 5 || $id == 7 || $id == 9 || $id == 11 || $id == 13 || $id == 15)
+                    echo "<tr>";
+                    
+                 echo "<td> <a target = 'movieFrame' href = 'getMovieInfo.php?movieId=".$record['movieId']."'>".
+                 $record['movieTitle'] . "</a><br>" . $record['price']. "<br>
+                      <input type='checkbox' name='moviesToBuy[]' value = '$movie' >Add to Cart</button></td>";
+             $id++;
+                if($id == 1 || $id == 3 || $id == 5 || $id == 7 || $id == 9 || $id == 11 || $id == 13 || $id === 15)
                  echo "</tr>";
+                
+                       
+                
              }
          }
+        // print_r($_GET['moviesToBuy']);
+             
          ?>
-
+        
+ 
          </table>
         </div>
-        
-        <form>
-            <input type="submit" value="Proceed to Checkout" name="proceedToCheckout"/>
+          <input id = "ip" type="submit" value="Proceed to Checkout" name="addCart"/>
+           
         </form>
+       <div  style="float:right" >
+      <iframe  name="movieFrame" width="250" height="315" 
+          src="getMovieInfo.php" frameborder="0"></iframe>
+      </div>
+      
+      </div>
+    
      
     </body>
 </html>

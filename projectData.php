@@ -1,9 +1,10 @@
 <?php
-
+session_start();
     
     function getProductTypes()
     {
         $products = array();
+        
         
         
         

@@ -1,7 +1,9 @@
 <?php
 
-    include('../../includes/database.php');
-$dbConnection = getDatabaseConnection('catalogue');
+   session_start();
+include('includes/database.php');
+$dbConnection = getDatabaseConnection('online_movie_catalogue');
+
 
 function getProducts($query)
 {
@@ -18,10 +20,13 @@ function getProducts($query)
     return $records;
     
 }
+
+
 ?>
 <!DOCTYPE html>
 <html>
     <head>
+        
         <title> </title>
     </head>
     <body>
