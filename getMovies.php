@@ -66,3 +66,4 @@ function getMovies()
          </table>
     </body>
 </html>
+
