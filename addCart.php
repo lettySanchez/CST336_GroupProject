@@ -26,7 +26,7 @@ $dbConnection = getDatabaseConnection('online_movie_catalogue');
 
         $total = 0;
         echo "<table border=1>";
-        echo "<td>" . "Movie Title" . "</td>" . "<td>" . "Price" . "</td>";
+        echo "<td>" . "Movie Title" . "</td>" . "<td>" . "Price" . "</td>". "<td>" . "</td>";
         echo "<tr>";
         
          if(!empty($records) && !empty($itemsList))
@@ -44,6 +44,13 @@ $dbConnection = getDatabaseConnection('online_movie_catalogue');
                         echo "<td> " .$list . "</td> " . "<td>" . "$" . $record['price'] . "</td>";
                         echo "<br>";
                         $total += $record['price'];
+                         $record['movieTitle'].= ".jpg";
+               
+        
+                echo "<td>" . "<img src='img/Movie_Folder/" .  
+                $record['movieTitle'] . "'" . "alt = 'pic'" .  "height = '50px'" . " width = '50px'" . "</img>";
+                
+                echo "</td>";  
                         echo "</tr>";
                       //  array_push($_SESSION['items'], );
                      

@@ -183,7 +183,7 @@ function getMovieGenres()
            
         </form>
        <div  style="float:right" >
-      <iframe  name="movieFrame" width="250" height="315" 
+      <iframe  name="movieFrame" width="250" height="215" 
           src="getMovieInfo.php" frameborder="0"></iframe>
       </div>
       
