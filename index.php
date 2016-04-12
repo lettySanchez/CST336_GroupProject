@@ -213,11 +213,7 @@ if (!isDataValid()){
          <?= displayErrors() ?>
          <br />
          <br />
-    <footer>
-        <hr>
-            &copy; Sanchez, Aquino, Gopar, Ramirez 2016. <br />
-            <img src="../../img/csumb-logo.png" alt="CSUMB logo" />
-        </footer>
+    
 
           <input style="float:center" type="submit" value="Proceed to Checkout" name="addCart"/>
            
