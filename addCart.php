@@ -48,7 +48,7 @@ $dbConnection = getDatabaseConnection('online_movie_catalogue');
                
         
                 echo "<td>" . "<img src='img/Movie_Folder/" .  
-                $record['movieTitle'] . "'" . "alt = 'pic'" .  "height = '50px'" . " width = '50px'" . "</img>";
+                $record['movieTitle'] . "'" . "alt = 'pic'" .  "height = '200px'" . " width = '200px'" . "</img>";
                 
                 echo "</td>";  
                         echo "</tr>";
@@ -73,11 +73,7 @@ $dbConnection = getDatabaseConnection('online_movie_catalogue');
     return $dataValid;
     
 }
-if (!isDataValid()){
-        header('Location: index.php');
-    };
-//print_r($itemsList);
-  //header('Location: index.php');
+
 ?>
 
 <!DOCTYPE html>
