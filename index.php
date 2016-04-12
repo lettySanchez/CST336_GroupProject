@@ -224,6 +224,7 @@ if (!isDataValid()){
        <br />
          <br />
          <br />
+<<<<<<< HEAD
          <div>
     <footer>
         <hr>
@@ -232,5 +233,20 @@ if (!isDataValid()){
         </footer>
 
      </div>
+=======
+    
+
+          <input style="float:center" type="submit" value="Proceed to Checkout" name="addCart"/>
+           
+        </form>
+       <div  style="float:right" >
+      <iframe  name="movieFrame" width="250" height="215" 
+          src="getMovieInfo.php" frameborder="0"></iframe>
+      </div>
+      
+      </div>
+    
+     
+>>>>>>> d4318fa6f6540067010e702a062025c38bacbd3b
     </body>
 </html>
