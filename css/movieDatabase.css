@@ -15,7 +15,9 @@ background: linear-gradient(135deg,  rgba(61,185,158,1) 0%,rgba(122,210,187,1) 6
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3db99e', endColorstr='#00a0e2cd',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
    margin-left: 10%;
-    margin-right:40%;
+   margin-right:40%;
+    margin: 0 auto;
+    font-family:Verdana, Arial, Georgia;
   
 
 }
