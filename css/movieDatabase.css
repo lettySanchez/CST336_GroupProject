@@ -1,66 +1,42 @@
 h1{
-    color: #ffffff;
+      
     text-align: center;
-    font-size: 50px;
-}
-h3{
-    font-size: 150% ;
-    color: #000099;
-    text-align: center;
-}
-#searchF{
-    font-size: 12pt;
-}
-#imgMovie{
-    text-align: center;
+      text-shadow: 2px 2px #33cc33;
+    
 }
 body{
-    
-     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3db99e+0,a0e2cd+100&1+0,1+62,0.7+68,0+100 */
-background: -moz-linear-gradient(-45deg,  rgba(61,185,158,1) 0%, rgba(122,210,187,1) 62%, rgba(128,213,190,0.7) 68%, rgba(160,226,205,0) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(-45deg,  rgba(61,185,158,1) 0%,rgba(122,210,187,1) 62%,rgba(128,213,190,0.7) 68%,rgba(160,226,205,0) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(135deg,  rgba(61,185,158,1) 0%,rgba(122,210,187,1) 62%,rgba(128,213,190,0.7) 68%,rgba(160,226,205,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3db99e', endColorstr='#00a0e2cd',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#31a187+0,65c5ab+49,76d4bc+50,8edac7+100 */
+background: rgb(49,161,135); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(49,161,135,1) 0%, rgba(101,197,171,1) 49%, rgba(118,212,188,1) 50%, rgba(142,218,199,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(49,161,135,1) 0%,rgba(101,197,171,1) 49%,rgba(118,212,188,1) 50%,rgba(142,218,199,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(49,161,135,1) 0%,rgba(101,197,171,1) 49%,rgba(118,212,188,1) 50%,rgba(142,218,199,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#31a187', endColorstr='#8edac7',GradientType=0 ); /* IE6-9 */
 
-  padding: 20px;
-    width: 1000px;
-    font-size: 20px;
-    text-align: center;
-    font-family: inherit;
-    margin: 0 auto;
-    
-  
+color: #000066 !important;
 
-}
-main{
-  font-family:Verdana, Arial, Georgia;
-   margin: 0 auto;
-   text-align:center;
-   font-size: 40px !important;
-}
-
-#table, td{
- border: 2px solid #990033;    
-    
-      font-size: 100% !important;
-      margin: auto;
-    
-}
-th{
-    color: red !important;
-}
-
-td{
+ margin-left: 25%;
+    margin-right:35%;
    
-     height:50px;
 }
-#table{
-   font-family:cursive;
-   margin: 0 auto;
-   background-color: white;
-   text-align:center;
-   border: 10px solid black;
-   width: 150px;
+
+#inputs{
+     background-color: #ffffcc !important;
+     color: #660066;
+     font-weight: bold;
+
+
+}
+#inputsA{
+     
+     color: #660066;
+     font-weight: bold;
+
+
+}
+#inputsF{
+    
+      color: #ffcccc !important;
+    
 }
 iframe{
     
@@ -68,6 +44,11 @@ iframe{
     color: #660033 !important;
    
 }
+th{
+    
+        font-weight: bold;
+}
+
 #dropBox{
      width:100px;
 }
@@ -76,6 +57,7 @@ iframe{
 }
 #addToCart{
     text-align: center;
+    background-color: blue;
 }
 footer{
     text-align: center;

@@ -100,6 +100,7 @@ function getMovieGenres()
     
     return $records;
 }
+
 if (!isDataValid()){
         header('Location: index.php');
     };
@@ -116,14 +117,12 @@ if (!isDataValid()){
         <link rel="stylesheet" type="text/css" href="css/movieDatabase.css" />
     </head>
     <body>
-        <h1>Welcome to <strong>Online Movie Catalogue!</strong></h1>
-        <img id="imgMovie" src="img/img1.png" width="200" height="150"  alt="movies" >
-        <br />
-        <br />
+        <h1>Welcome to Online Movie Catalogue!</h1>
+        
         
         <form >
 
-            <select id="dropBox" name="genre">
+            <select name="genre">
                 <option value="">All Genres</option>
                 <?php
                     $movieGenreList = getMovieGenres();
@@ -134,14 +133,13 @@ if (!isDataValid()){
                     
                 ?>
             </select>
-            <input id="searchF" type="text" name="movieQuery" placeholder="Search for a movie" size=80/>
-            <br />
-            <br />
+            
+            <input type="text" name="movieQuery" placeholder="Search for a movie" size=100/>
+
             <input type="submit" value="submit" name="searchForm"/>
             
             <br>
-            <br />
-           <strong id="rating">Star Rating</strong><br>
+           <strong>Star Rating</strong><br>
             <input type='radio' name='starRating' value='1' id='1'>
                   <label for='1'>1</label>
             <input type='radio' name='starRating' value='2' id='2'>
@@ -152,8 +150,7 @@ if (!isDataValid()){
                   <label for='4'>4</label>
             <input type='radio' name='starRating' value='5' id='5'>
                   <label for='5'>5</label>
-            <br />
-            <br />
+            <br>
             <strong>Price Range</strong>
                   
             <input type='radio' name='priceRange' value='1' id='1'>
@@ -164,28 +161,14 @@ if (!isDataValid()){
                   <label for='10'>$10-$14</label>
             
             <br>
-            <br />
             <strong>Sort by</strong>
             <select name="sortBy">
                 <option value="">Select</option>
                 <option value="low">Price: Low to High</option>
                 <option value ="high">Price: High to Low</option>
             </select>
-            
-            <br />
-            <br />
-            <input id = "ip" type="submit" value="Proceed to Checkout" name="addCart"/>
-           
-        </form>
-       <div  style="float:right" >
-      <iframe  name="movieFrame" width="250" height="315" 
-          src="getMovieInfo.php" frameborder="0"></iframe>
-      </div>
-      
-      </div>
-      <br />
-      <br />
-             <div>
+
+    <div>
         </form>
          <form action = "addCart.php">
         <div>
@@ -193,6 +176,7 @@ if (!isDataValid()){
         <table border=1  style="float:left" >
             
         <?php
+
          $row = 0;
          $records =  getMovies();
          if(!empty($records))
@@ -223,6 +207,7 @@ if (!isDataValid()){
  
          </table>
         </div>
+
           <br />
           <br />
          <?= displayErrors() ?>
@@ -233,6 +218,16 @@ if (!isDataValid()){
             &copy; Sanchez, Aquino, Gopar, Ramirez 2016. <br />
             <img src="../../img/csumb-logo.png" alt="CSUMB logo" />
         </footer>
+
+          <input style="float:center" type="submit" value="Proceed to Checkout" name="addCart"/>
+           
+        </form>
+       <div  style="float:right" >
+      <iframe  name="movieFrame" width="250" height="315" 
+          src="getMovieInfo.php" frameborder="0"></iframe>
+      </div>
+      
+      </div>
     
      
     </body>

@@ -39,18 +39,20 @@ $dbConnection = getDatabaseConnection('online_movie_catalogue');
                 
                     
                      if($movie === $list){
+                        array_push($_SESSION['items'], $list);
                         
-                        echo "<td> " .$list . "</td> " . "<td>" . $record['price'] . "</td>";
+                        echo "<td> " .$list . "</td> " . "<td>" . "$" . $record['price'] . "</td>";
                         echo "<br>";
                         $total += $record['price'];
                         echo "</tr>";
+                      //  array_push($_SESSION['items'], );
                      
                  }
             }
          }
      }
      echo "</table>";
-     echo "Total: " . $total;
+     echo "Total: $" . $total;
        
    
     
