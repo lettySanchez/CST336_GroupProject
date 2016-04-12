@@ -34,11 +34,11 @@ function getMovieInfo() {
         
         $productInfo = getMovieInfo();
         if($productInfo != null){
-        echo "Movie Description: " . $productInfo['movieDescription'];
+        echo "Movie Description: " ." ".  $productInfo['movieDescription'];
         echo "<br>";
-        echo  "Start Rating" . $productInfo['starRating'];
+        echo  "Start Rating" . " " .$productInfo['starRating'];
         echo "<br>";
-        echo  "Main Actor" . $productInfo['actor'];
+        echo  "Main Actor" . " ".  $productInfo['actor'];
         
         }
         
