@@ -2,6 +2,7 @@ h1{
       
     text-align: center;
       text-shadow: 2px 2px #33cc33;
+      
     
 }
 body{
@@ -16,8 +17,15 @@ color: #000066 !important;
 
  margin-left: 25%;
     margin-right:35%;
+    font-size: 20px !important;
    
 }
+main{
+  font-family:cursive;
+   margin: 0 auto;
+   text-align:center;
+}
+
 
 #inputs{
      background-color: #ffffcc !important;

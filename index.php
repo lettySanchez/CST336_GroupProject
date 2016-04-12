@@ -26,6 +26,7 @@ $dbConnection = getDatabaseConnection('online_movie_catalogue');
         array_push($_SESSION['errors'], "Error. You must select a movie genre");
         $dataValid = false;
     }
+   
     return $dataValid;
     
 }
@@ -104,8 +105,6 @@ function getMovieGenres()
 if (!isDataValid()){
         header('Location: index.php');
     };
- 
-
     
 
 ?>
@@ -132,10 +131,11 @@ if (!isDataValid()){
                     }
                     
                 ?>
+                
             </select>
             
             <input type="text" name="movieQuery" placeholder="Search for a movie" size=100/>
-
+            <br />
             <input type="submit" value="submit" name="searchForm"/>
             
             <br>
@@ -173,7 +173,7 @@ if (!isDataValid()){
          <form action = "addCart.php">
         <div>
          
-        <table border=1  style="float:left" >
+        <table border=1  style="float:right" >
             
         <?php
 
@@ -211,24 +211,26 @@ if (!isDataValid()){
           <br />
           <br />
          <?= displayErrors() ?>
+      
+          <input style="float:left" type="submit" value="Proceed to Checkout" name="addCart"/>
+           
+        </form>
+       <div  style="float:left" >
+      <iframe  name="movieFrame" width="250" height="315" 
+          src="getMovieInfo.php" frameborder="0"></iframe>
+      </div>
+      
+      </div>
+       <br />
          <br />
          <br />
+         <div>
     <footer>
         <hr>
             &copy; Sanchez, Aquino, Gopar, Ramirez 2016. <br />
             <img src="../../img/csumb-logo.png" alt="CSUMB logo" />
         </footer>
 
-          <input style="float:center" type="submit" value="Proceed to Checkout" name="addCart"/>
-           
-        </form>
-       <div  style="float:right" >
-      <iframe  name="movieFrame" width="250" height="315" 
-          src="getMovieInfo.php" frameborder="0"></iframe>
-      </div>
-      
-      </div>
-    
-     
+     </div>
     </body>
 </html>
