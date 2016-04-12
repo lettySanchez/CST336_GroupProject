@@ -64,22 +64,11 @@ $dbConnection = getDatabaseConnection('online_movie_catalogue');
    
     
   }
-<<<<<<< HEAD
   
 //print_r($itemsList);
   //header('Location: index.php');
-=======
-  function isDataValid(){
-    $dataValid = true;
-    if(empty(getMovieGenres())){
-        array_push($_SESSION['errors'], "Error. You must select a movie genre");
-        $dataValid = false;
-    }
-    return $dataValid;
-    
-}
 
->>>>>>> d4318fa6f6540067010e702a062025c38bacbd3b
+
 ?>
 
 <!DOCTYPE html>
