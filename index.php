@@ -7,6 +7,30 @@ $_SESSION['errors'] = array();
 include('includes/database.php');
 $dbConnection = getDatabaseConnection('online_movie_catalogue');
 
+ function displayErrors(){
+     $errorList = $_SESSION['errors'];
+     
+     
+     foreach($errorList as $error){
+         echo $error . "<br />";
+     }
+ }
+   
+   function isDataValid(){
+    $dataValid = true;
+    // if(empty($_SESSION['items'])){
+    //     array_push($_SESSION['errors'], Error. You must select a movie);
+    //     $dataValid = false;
+    // }
+    if(empty(getMovieGenres())){
+        array_push($_SESSION['errors'], "Error. You must select a movie genre");
+        $dataValid = false;
+    }
+    return $dataValid;
+    
+}
+
+
 function getMovies()
 {
     global $dbConnection;
@@ -77,6 +101,10 @@ function getMovieGenres()
     return $records;
 }
 
+if (!isDataValid()){
+        header('Location: index.php');
+    };
+ 
 
     
 
@@ -179,6 +207,18 @@ function getMovieGenres()
  
          </table>
         </div>
+
+          <br />
+          <br />
+         <?= displayErrors() ?>
+         <br />
+         <br />
+    <footer>
+        <hr>
+            &copy; Sanchez, Aquino, Gopar, Ramirez 2016. <br />
+            <img src="../../img/csumb-logo.png" alt="CSUMB logo" />
+        </footer>
+
           <input style="float:center" type="submit" value="Proceed to Checkout" name="addCart"/>
            
         </form>
