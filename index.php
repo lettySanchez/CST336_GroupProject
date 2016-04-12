@@ -91,7 +91,8 @@ function getMovieGenres()
     </head>
     <body>
         <h1>Welcome to <strong>Online Movie Catalogue!</strong></h1>
-        <img src="img/img1.png" width="200" height="150"  alt="movies" >
+        <img id="imgMovie" src="img/img1.png" width="200" height="150"  alt="movies" >
+        <br />
         <br />
         
         <form >
